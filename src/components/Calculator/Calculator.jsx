@@ -117,6 +117,11 @@ function Calculator() {
     setNumberInput(nextNumberInput);
   }
 
+  function clear() {
+    setNumberInput("");
+    setCalculation([]);
+  }
+
   return (
     <div className={styles.calculator}>
       <Screen />
@@ -166,7 +171,9 @@ function Calculator() {
         /
       </Button>
       <Button type="EQUALS">=</Button>
-      <Button type="AC">AC</Button>
+      <Button type="AC" handleClick={clear}>
+        AC
+      </Button>
       <Button type="DEL" handleClick={del}>
         DEL
       </Button>
