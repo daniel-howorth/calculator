@@ -4,9 +4,9 @@ import Button from "../Button";
 import Screen from "../Screen";
 
 function Calculator() {
-  // const [calculationString, setCalculationString] = React.useState("");
   const [numberInput, setNumberInput] = React.useState("");
   const [calculation, setCalculation] = React.useState([]);
+  const [lastResult, setLastResult] = React.useState(0);
 
   function enterNumber(value) {
     const nextNumber = `${numberInput}${value}`;
@@ -108,6 +108,15 @@ function Calculator() {
     }
   }
 
+  function enterEquals() {
+    const nextCalculation = [...calculation, numberInput];
+    setCalculation(nextCalculation);
+    const calculationStr = nextCalculation.join(" ");
+    const result = eval(calculationStr);
+    console.log(result);
+    setLastResult(result);
+  }
+
   function del() {
     if (numberInput.length === 0) {
       return;
@@ -170,7 +179,9 @@ function Calculator() {
       <Button type="DIVIDE" handleClick={enterDivide}>
         /
       </Button>
-      <Button type="EQUALS">=</Button>
+      <Button type="EQUALS" handleClick={enterEquals}>
+        =
+      </Button>
       <Button type="AC" handleClick={clear}>
         AC
       </Button>
