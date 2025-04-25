@@ -1,5 +1,25 @@
 .screen {
   background-color: #00302c;
-  height: 100px;
+  height: calc(100 / 16 * 1rem);
   grid-area: SCREEN;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-end;
+  padding: 16px 8px 4px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.display {
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.entries {
+  margin-bottom: auto;
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 1.2rem;
+  font-weight: 400;
 }

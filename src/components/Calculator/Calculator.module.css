@@ -11,4 +11,5 @@
     "SEVEN EIGHT NINE SUBTRACT"
     "DECIMAL ZERO EQUALS EQUALS";
   gap: 2px;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
 }
