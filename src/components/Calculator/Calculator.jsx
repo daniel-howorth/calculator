@@ -1,17 +1,95 @@
 import React from "react";
 import styles from "./Calculator.module.css";
-// import { calculatorValues } from "../../constants";
 import Button from "../Button";
 import Screen from "../Screen";
 
 function Calculator() {
-  const [keyboardInput, setKeyboardInput] = React.useState("");
+  const [calculationString, setCalculationString] = React.useState("");
+  const [numberInput, setNumberInput] = React.useState("");
 
   function enterNumber(value) {
-    const nextNumber = `${keyboardInput}${value}`;
+    const nextNumber = `${numberInput}${value}`;
     console.log(nextNumber);
-    setKeyboardInput(nextNumber);
+    setNumberInput(nextNumber);
+
+    const nextCalculationString = `${calculationString}${value}`;
+    console.log(nextCalculationString);
+    setCalculationString(nextCalculationString);
   }
+
+  function enterDecimal() {
+    const nextNumber = `${numberInput}.`;
+    console.log(nextNumber);
+    setNumberInput(nextNumber);
+
+    const nextCalculationString = `${calculationString}.`;
+    console.log(nextCalculationString);
+    setCalculationString(nextCalculationString);
+  }
+
+  function enterAdd() {
+    setNumberInput("");
+
+    let nextCalculationString;
+    const lastCalcStringChar = calculationString[calculationString.length - 1];
+
+    if (/^[+\-*/]$/.test(lastCalcStringChar)) {
+      nextCalculationString = calculationString.slice(0, -1) + "+";
+    } else {
+      nextCalculationString = `${calculationString}+`;
+    }
+    console.log(nextCalculationString);
+    setCalculationString(nextCalculationString);
+  }
+
+  function enterSubtract() {
+    setNumberInput("");
+
+    let nextCalculationString;
+    const lastCalcStringChar = calculationString[calculationString.length - 1];
+
+    if (/^[+\-*/]$/.test(lastCalcStringChar)) {
+      nextCalculationString = calculationString.slice(0, -1) + "-";
+    } else {
+      nextCalculationString = `${calculationString}-`;
+    }
+    console.log(nextCalculationString);
+    setCalculationString(nextCalculationString);
+  }
+
+  function enterMultiply() {
+    setNumberInput("");
+
+    let nextCalculationString;
+    const lastCalcStringChar = calculationString[calculationString.length - 1];
+
+    if (/^[+\-*/]$/.test(lastCalcStringChar)) {
+      nextCalculationString = calculationString.slice(0, -1) + "*";
+    } else {
+      nextCalculationString = `${calculationString}*`;
+    }
+    console.log(nextCalculationString);
+    setCalculationString(nextCalculationString);
+  }
+
+  function enterDivide() {
+    setNumberInput("");
+
+    let nextCalculationString;
+    const lastCalcStringChar = calculationString[calculationString.length - 1];
+
+    if (/^[+\-*/]$/.test(lastCalcStringChar)) {
+      nextCalculationString = calculationString.slice(0, -1) + "/";
+    } else {
+      nextCalculationString = `${calculationString}/`;
+    }
+    console.log(nextCalculationString);
+    setCalculationString(nextCalculationString);
+  }
+
+  // function del() {
+
+  // }
 
   return (
     <div className={styles.calculator}>
@@ -46,12 +124,21 @@ function Calculator() {
       <Button type="ZERO" handleClick={() => enterNumber("0")}>
         0
       </Button>
-      <Button type="DECIMAL">.</Button>
-      <Button type="ADD">+</Button>
-      <Button type="SUBTRACT">-</Button>
-
-      <Button type="MULTIPLY">*</Button>
-      <Button type="DIVIDE">/</Button>
+      <Button type="DECIMAL" handleClick={enterDecimal}>
+        .
+      </Button>
+      <Button type="ADD" handleClick={enterAdd}>
+        +
+      </Button>
+      <Button type="SUBTRACT" handleClick={enterSubtract}>
+        -
+      </Button>
+      <Button type="MULTIPLY" handleClick={enterMultiply}>
+        *
+      </Button>
+      <Button type="DIVIDE" handleClick={enterDivide}>
+        /
+      </Button>
       <Button type="EQUALS">=</Button>
       <Button type="AC">AC</Button>
       <Button type="DEL">DEL</Button>
