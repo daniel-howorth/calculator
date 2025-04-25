@@ -1,0 +1,75 @@
+.button {
+  background-color: aliceblue;
+}
+
+.button.ONE {
+  grid-area: ONE;
+}
+
+.button.TWO {
+  grid-area: TWO;
+}
+
+.button.THREE {
+  grid-area: THREE;
+}
+
+.button.FOUR {
+  grid-area: FOUR;
+}
+
+.button.FIVE {
+  grid-area: FIVE;
+}
+
+.button.SIX {
+  grid-area: SIX;
+}
+
+.button.SEVEN {
+  grid-area: SEVEN;
+}
+
+.button.EIGHT {
+  grid-area: EIGHT;
+}
+
+.button.NINE {
+  grid-area: NINE;
+}
+
+.button.ZERO {
+  grid-area: ZERO;
+}
+
+.button.DECIMAL {
+  grid-area: DECIMAL;
+}
+
+.button.ADDITION {
+  grid-area: ADDITION;
+}
+
+.button.SUBTRACT {
+  grid-area: SUBTRACT;
+}
+
+.button.MULTIPLY {
+  grid-area: MULTIPLY;
+}
+
+.button.DIVIDE {
+  grid-area: DIVIDE;
+}
+
+.button.EQUALS {
+  grid-area: EQUALS;
+}
+
+.AC {
+  grid-area: AC;
+}
+
+.button.DEL {
+  grid-area: DEL;
+}

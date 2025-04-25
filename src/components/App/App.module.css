@@ -2,4 +2,5 @@
   min-height: 100%;
   display: grid;
   place-content: center;
+  background: linear-gradient(135deg, hsl(260, 17%, 15%), hsl(260, 20%, 70%));
 }
