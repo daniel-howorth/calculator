@@ -1,12 +1,14 @@
 .calculator {
-  min-width: 500px;
+  min-width: 350px;
   background-color: white;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
+    "SCREEN SCREEN SCREEN SCREEN"
     "AC AC DEL DIVIDE"
     "ONE TWO THREE MULTIPLY"
     "FOUR FIVE SIX ADD"
     "SEVEN EIGHT NINE SUBTRACT"
     "DECIMAL ZERO EQUALS EQUALS";
+  gap: 2px;
 }

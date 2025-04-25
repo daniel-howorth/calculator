@@ -1,5 +1,11 @@
 .button {
-  background-color: aliceblue;
+  border: none;
+  padding: 16px;
+  background-color: #bbedea;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .button.ONE {

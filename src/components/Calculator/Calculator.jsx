@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./Calculator.module.css";
 // import { calculatorValues } from "../../constants";
 import Button from "../Button";
+import Screen from "../Screen";
 
 function Calculator() {
   return (
     <div className={styles.calculator}>
+      <Screen />
       <Button type="AC">AC</Button>
       <Button type="DEL">DEL</Button>
       <Button type="DIVIDE">/</Button>
