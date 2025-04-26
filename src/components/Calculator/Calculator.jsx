@@ -36,7 +36,9 @@ function Calculator() {
         break;
     }
 
-    if (numberInput.length > 0) {
+    let numberIsEntered = numberInput.length > 0;
+
+    if (numberIsEntered) {
       const nextCalculation = calculation.concat(numberInput, operator);
       console.log(nextCalculation);
       setCalculation(nextCalculation);
@@ -48,13 +50,9 @@ function Calculator() {
 
     if (lastCalcValue === operator) {
       return;
-    } else {
-      let nextCalculation = [...calculation];
-      nextCalculation[nextCalculation.length - 1] = operator;
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      return;
     }
+
+    updateOperator(operator);
   }
 
   function enterEquals() {
@@ -79,6 +77,14 @@ function Calculator() {
   function clear() {
     setNumberInput("");
     setCalculation([]);
+  }
+
+  function updateOperator(operator) {
+    let nextCalculation = [...calculation];
+    nextCalculation[nextCalculation.length - 1] = operator;
+    console.log(nextCalculation);
+    setCalculation(nextCalculation);
+    return;
   }
 
   return (
