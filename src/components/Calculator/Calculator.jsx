@@ -19,9 +19,25 @@ function Calculator() {
     setNumberInput(nextNumber);
   }
 
-  function enterAdd() {
+  function enterOperator(type) {
+    let operator;
+    switch (type) {
+      case "ADD":
+        operator = "+";
+        break;
+      case "SUBTRACT":
+        operator = "-";
+        break;
+      case "MULTIPLY":
+        operator = "*";
+        break;
+      case "DIVIDE":
+        operator = "/";
+        break;
+    }
+
     if (numberInput.length > 0) {
-      const nextCalculation = calculation.concat(numberInput, "+");
+      const nextCalculation = calculation.concat(numberInput, operator);
       console.log(nextCalculation);
       setCalculation(nextCalculation);
       setNumberInput("");
@@ -30,77 +46,11 @@ function Calculator() {
 
     const lastCalcValue = calculation[calculation.length - 1];
 
-    if (lastCalcValue === "+") {
+    if (lastCalcValue === operator) {
       return;
     } else {
       let nextCalculation = [...calculation];
-      nextCalculation[nextCalculation.length - 1] = "+";
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      return;
-    }
-  }
-
-  function enterSubtract() {
-    if (numberInput.length > 0) {
-      const nextCalculation = calculation.concat(numberInput, "-");
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      setNumberInput("");
-      return;
-    }
-
-    const lastCalcValue = calculation[calculation.length - 1];
-
-    if (lastCalcValue === "-") {
-      return;
-    } else {
-      let nextCalculation = [...calculation];
-      nextCalculation[nextCalculation.length - 1] = "-";
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      return;
-    }
-  }
-
-  function enterMultiply() {
-    if (numberInput.length > 0) {
-      const nextCalculation = calculation.concat(numberInput, "*");
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      setNumberInput("");
-      return;
-    }
-
-    const lastCalcValue = calculation[calculation.length - 1];
-
-    if (lastCalcValue === "*") {
-      return;
-    } else {
-      let nextCalculation = [...calculation];
-      nextCalculation[nextCalculation.length - 1] = "*";
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      return;
-    }
-  }
-
-  function enterDivide() {
-    if (numberInput.length > 0) {
-      const nextCalculation = calculation.concat(numberInput, "/");
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      setNumberInput("");
-      return;
-    }
-
-    const lastCalcValue = calculation[calculation.length - 1];
-
-    if (lastCalcValue === "/") {
-      return;
-    } else {
-      let nextCalculation = [...calculation];
-      nextCalculation[nextCalculation.length - 1] = "/";
+      nextCalculation[nextCalculation.length - 1] = operator;
       console.log(nextCalculation);
       setCalculation(nextCalculation);
       return;
@@ -167,16 +117,16 @@ function Calculator() {
       <Button type="DECIMAL" handleClick={enterDecimal}>
         .
       </Button>
-      <Button type="ADD" handleClick={enterAdd}>
+      <Button type="ADD" handleClick={() => enterOperator("ADD")}>
         +
       </Button>
-      <Button type="SUBTRACT" handleClick={enterSubtract}>
+      <Button type="SUBTRACT" handleClick={() => enterOperator("SUBTRACT")}>
         -
       </Button>
-      <Button type="MULTIPLY" handleClick={enterMultiply}>
+      <Button type="MULTIPLY" handleClick={() => enterOperator("MULTIPLY")}>
         *
       </Button>
-      <Button type="DIVIDE" handleClick={enterDivide}>
+      <Button type="DIVIDE" handleClick={() => enterOperator("DIVIDE")}>
         /
       </Button>
       <Button type="EQUALS" handleClick={enterEquals}>
