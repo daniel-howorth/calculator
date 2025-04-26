@@ -6,7 +6,6 @@ import Screen from "../Screen";
 function Calculator() {
   const [numberInput, setNumberInput] = React.useState("");
   const [calculation, setCalculation] = React.useState([]);
-  const [lastResult, setLastResult] = React.useState(0);
 
   function enterNumber(value) {
     const nextNumber = `${numberInput}${value}`;
@@ -110,11 +109,12 @@ function Calculator() {
 
   function enterEquals() {
     const nextCalculation = [...calculation, numberInput];
-    setCalculation(nextCalculation);
+    console.log(nextCalculation);
     const calculationStr = nextCalculation.join(" ");
-    const result = eval(calculationStr);
+    const result = String(eval(calculationStr));
     console.log(result);
-    setLastResult(result);
+    setNumberInput(result);
+    setCalculation([]);
   }
 
   function del() {
@@ -133,7 +133,7 @@ function Calculator() {
 
   return (
     <div className={styles.calculator}>
-      <Screen />
+      <Screen displayValue={numberInput} entries={calculation} />
       <Button type="ONE" handleClick={() => enterNumber("1")}>
         1
       </Button>
