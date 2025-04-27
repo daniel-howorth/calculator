@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Calculator.module.css";
 import Button from "../Button";
+import NumberButton from "../NumberButton/NumberButton";
 import OperatorButton from "../OperatorButton/OperatorButton";
 import Screen from "../Screen";
 
@@ -12,14 +13,9 @@ function Calculator() {
     setNumberInput,
     calculation,
     setCalculation,
+    numbers,
     operators,
   } = React.use(CalculatorContext);
-
-  function enterNumber(value) {
-    const nextNumber = `${numberInput}${value}`;
-    console.log(nextNumber);
-    setNumberInput(nextNumber);
-  }
 
   function enterDecimal() {
     const nextNumber = `${numberInput}.`;
@@ -54,42 +50,15 @@ function Calculator() {
   return (
     <div className={styles.calculator}>
       <Screen displayValue={numberInput} entries={calculation} />
-      <Button type="ONE" handleClick={() => enterNumber("1")}>
-        1
-      </Button>
-      <Button type="TWO" handleClick={() => enterNumber("2")}>
-        2
-      </Button>
-      <Button type="THREE" handleClick={() => enterNumber("3")}>
-        3
-      </Button>
-      <Button type="FOUR" handleClick={() => enterNumber("4")}>
-        4
-      </Button>
-      <Button type="FIVE" handleClick={() => enterNumber("5")}>
-        5
-      </Button>
-      <Button type="SIX" handleClick={() => enterNumber("6")}>
-        6
-      </Button>
-      <Button type="SEVEN" handleClick={() => enterNumber("7")}>
-        7
-      </Button>
-      <Button type="EIGHT" handleClick={() => enterNumber("8")}>
-        8
-      </Button>
-      <Button type="NINE" handleClick={() => enterNumber("9")}>
-        9
-      </Button>
-      <Button type="ZERO" handleClick={() => enterNumber("0")}>
-        0
-      </Button>
-      <Button type="DECIMAL" handleClick={enterDecimal}>
-        .
-      </Button>
+      {Object.keys(numbers).map((num) => (
+        <NumberButton key={num} value={num} />
+      ))}
       {Object.keys(operators).map((operator) => (
         <OperatorButton key={operator} type={operator} />
       ))}
+      <Button type="DECIMAL" handleClick={enterDecimal}>
+        .
+      </Button>
       <Button type="EQUALS" handleClick={enterEquals}>
         =
       </Button>
