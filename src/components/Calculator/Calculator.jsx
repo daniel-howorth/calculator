@@ -5,19 +5,14 @@ import NumberButton from "../NumberButton";
 import OperatorButton from "../OperatorButton";
 import DecimalButton from "../DecimalButton";
 import EqualsButton from "../EqualsButton";
+import ClearButton from "../ClearButton";
 import Screen from "../Screen";
 
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function Calculator() {
-  const {
-    numberInput,
-    setNumberInput,
-    calculation,
-    setCalculation,
-    numbers,
-    operators,
-  } = React.use(CalculatorContext);
+  const { numberInput, setNumberInput, calculation, numbers, operators } =
+    React.use(CalculatorContext);
 
   function del() {
     if (numberInput.length === 0) {
@@ -26,11 +21,6 @@ function Calculator() {
     const nextNumberInput = numberInput.slice(0, -1);
     console.log(nextNumberInput);
     setNumberInput(nextNumberInput);
-  }
-
-  function clear() {
-    setNumberInput("");
-    setCalculation([]);
   }
 
   return (
@@ -44,9 +34,7 @@ function Calculator() {
       ))}
       <DecimalButton />
       <EqualsButton />
-      <Button type="AC" handleClick={clear}>
-        AC
-      </Button>
+      <ClearButton />
       <Button type="DEL" handleClick={del}>
         DEL
       </Button>
