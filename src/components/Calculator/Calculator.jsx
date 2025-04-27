@@ -14,13 +14,16 @@ function Calculator() {
   const { numberInput, calculation, numbers, operators } =
     React.use(CalculatorContext);
 
+  const numberKeys = Object.keys(numbers);
+  const operatorKeys = Object.keys(operators);
+
   return (
     <div className={styles.calculator}>
       <Screen displayValue={numberInput} entries={calculation} />
-      {Object.keys(numbers).map((num) => (
+      {numberKeys.map((num) => (
         <NumberButton key={num} value={num} />
       ))}
-      {Object.keys(operators).map((operator) => (
+      {operatorKeys.map((operator) => (
         <OperatorButton key={operator} type={operator} />
       ))}
       <DecimalButton />

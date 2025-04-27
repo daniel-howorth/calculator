@@ -19,7 +19,6 @@ function OperatorButton({ type }) {
 
     if (numberIsEntered) {
       const nextCalculation = calculation.concat(numberInput, operator);
-      console.log(nextCalculation);
       setCalculation(nextCalculation);
       setNumberInput("");
       return;
@@ -38,7 +37,6 @@ function OperatorButton({ type }) {
     let nextCalculation = [...calculation];
     const lastIndex = nextCalculation.length - 1;
     nextCalculation[lastIndex] = operator;
-    console.log(nextCalculation);
     setCalculation(nextCalculation);
     return;
   }
