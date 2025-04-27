@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./App.module.css";
 import Calculator from "../Calculator";
+import CalculatorProvider from "../../contexts/CalculatorProvider";
 
 function App() {
   return (
-    <div className={styles.wrapper}>
-      <Calculator />
-    </div>
+    <CalculatorProvider>
+      <div className={styles.wrapper}>
+        <Calculator />
+      </div>
+    </CalculatorProvider>
   );
 }
 

@@ -1,11 +1,19 @@
 import React from "react";
 import styles from "./Calculator.module.css";
 import Button from "../Button";
+import OperatorButton from "../OperatorButton/OperatorButton";
 import Screen from "../Screen";
 
+import { CalculatorContext } from "../../contexts/CalculatorProvider";
+
 function Calculator() {
-  const [numberInput, setNumberInput] = React.useState("");
-  const [calculation, setCalculation] = React.useState([]);
+  const {
+    numberInput,
+    setNumberInput,
+    calculation,
+    setCalculation,
+    operators,
+  } = React.use(CalculatorContext);
 
   function enterNumber(value) {
     const nextNumber = `${numberInput}${value}`;
@@ -17,42 +25,6 @@ function Calculator() {
     const nextNumber = `${numberInput}.`;
     console.log(nextNumber);
     setNumberInput(nextNumber);
-  }
-
-  function enterOperator(type) {
-    let operator;
-    switch (type) {
-      case "ADD":
-        operator = "+";
-        break;
-      case "SUBTRACT":
-        operator = "-";
-        break;
-      case "MULTIPLY":
-        operator = "*";
-        break;
-      case "DIVIDE":
-        operator = "/";
-        break;
-    }
-
-    let numberIsEntered = numberInput.length > 0;
-
-    if (numberIsEntered) {
-      const nextCalculation = calculation.concat(numberInput, operator);
-      console.log(nextCalculation);
-      setCalculation(nextCalculation);
-      setNumberInput("");
-      return;
-    }
-
-    const lastCalcValue = calculation[calculation.length - 1];
-
-    if (lastCalcValue === operator) {
-      return;
-    }
-
-    updateOperator(operator);
   }
 
   function enterEquals() {
@@ -77,14 +49,6 @@ function Calculator() {
   function clear() {
     setNumberInput("");
     setCalculation([]);
-  }
-
-  function updateOperator(operator) {
-    let nextCalculation = [...calculation];
-    nextCalculation[nextCalculation.length - 1] = operator;
-    console.log(nextCalculation);
-    setCalculation(nextCalculation);
-    return;
   }
 
   return (
@@ -123,18 +87,9 @@ function Calculator() {
       <Button type="DECIMAL" handleClick={enterDecimal}>
         .
       </Button>
-      <Button type="ADD" handleClick={() => enterOperator("ADD")}>
-        +
-      </Button>
-      <Button type="SUBTRACT" handleClick={() => enterOperator("SUBTRACT")}>
-        -
-      </Button>
-      <Button type="MULTIPLY" handleClick={() => enterOperator("MULTIPLY")}>
-        *
-      </Button>
-      <Button type="DIVIDE" handleClick={() => enterOperator("DIVIDE")}>
-        /
-      </Button>
+      {Object.keys(operators).map((operator) => (
+        <OperatorButton key={operator} type={operator} />
+      ))}
       <Button type="EQUALS" handleClick={enterEquals}>
         =
       </Button>
