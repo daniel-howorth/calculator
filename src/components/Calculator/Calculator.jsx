@@ -1,27 +1,18 @@
 import React from "react";
 import styles from "./Calculator.module.css";
-import Button from "../Button";
 import NumberButton from "../NumberButton";
 import OperatorButton from "../OperatorButton";
 import DecimalButton from "../DecimalButton";
 import EqualsButton from "../EqualsButton";
 import ClearButton from "../ClearButton";
+import DeleteButton from "../DeleteButton";
 import Screen from "../Screen";
 
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function Calculator() {
-  const { numberInput, setNumberInput, calculation, numbers, operators } =
+  const { numberInput, calculation, numbers, operators } =
     React.use(CalculatorContext);
-
-  function del() {
-    if (numberInput.length === 0) {
-      return;
-    }
-    const nextNumberInput = numberInput.slice(0, -1);
-    console.log(nextNumberInput);
-    setNumberInput(nextNumberInput);
-  }
 
   return (
     <div className={styles.calculator}>
@@ -35,9 +26,7 @@ function Calculator() {
       <DecimalButton />
       <EqualsButton />
       <ClearButton />
-      <Button type="DEL" handleClick={del}>
-        DEL
-      </Button>
+      <DeleteButton />
     </div>
   );
 }
