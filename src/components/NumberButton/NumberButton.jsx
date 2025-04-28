@@ -5,11 +5,16 @@ import styles from "./NumberButton.module.css";
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function NumberButton({ value }) {
-  const { numberInput, setNumberInput, numbers } = React.use(CalculatorContext);
+  const { numberInput, setNumberInput, numbers, isError, setIsError } =
+    React.use(CalculatorContext);
 
   const digit = numbers[value];
 
   function handleClick() {
+    if (isError) {
+      setIsError(false);
+    }
+
     const nextNumberInput = `${numberInput}${digit}`;
     setNumberInput(nextNumberInput);
   }

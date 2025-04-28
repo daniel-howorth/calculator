@@ -15,8 +15,6 @@ function OperatorButton({ type }) {
   } = React.use(CalculatorContext);
 
   const operator = operators[type];
-  console.log(type);
-  console.log(operator);
 
   function handleClick() {
     let numberIsEntered = numberInput.length > 0;

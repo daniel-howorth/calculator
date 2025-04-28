@@ -5,6 +5,12 @@ export const CalculatorContext = React.createContext();
 function CalculatorProvider({ children }) {
   const [numberInput, setNumberInput] = React.useState("");
   const [calculation, setCalculation] = React.useState([]);
+  const [isError, setIsError] = React.useState(false);
+
+  function resetCalculator() {
+    setNumberInput("");
+    setCalculation([]);
+  }
 
   const numbers = {
     zero: "0",
@@ -28,6 +34,9 @@ function CalculatorProvider({ children }) {
     setCalculation,
     numbers,
     operators,
+    isError,
+    setIsError,
+    resetCalculator,
   };
 
   return <CalculatorContext value={value}>{children}</CalculatorContext>;

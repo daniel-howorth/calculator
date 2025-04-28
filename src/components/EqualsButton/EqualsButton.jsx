@@ -6,13 +6,28 @@ import styles from "./EqualsButton.module.css";
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function EqualsButton() {
-  const { calculation, numberInput, setNumberInput, setCalculation } =
-    React.use(CalculatorContext);
+  const {
+    calculation,
+    numberInput,
+    setNumberInput,
+    setCalculation,
+    setIsError,
+    resetCalculator,
+  } = React.use(CalculatorContext);
 
   function handleClick() {
     const nextCalculation = [...calculation, numberInput];
     const calculationStr = nextCalculation.join(" ");
-    const result = String(eval(calculationStr));
+    let result;
+
+    try {
+      result = String(eval(calculationStr));
+    } catch {
+      setIsError(true);
+      resetCalculator();
+      return;
+    }
+
     setNumberInput(result);
     setCalculation([]);
   }

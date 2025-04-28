@@ -6,15 +6,10 @@ import styles from "./ClearButton.module.css";
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function ClearButton() {
-  const { setNumberInput, setCalculation } = React.use(CalculatorContext);
-
-  function handleClick() {
-    setNumberInput("");
-    setCalculation([]);
-  }
+  const { resetCalculator } = React.use(CalculatorContext);
 
   return (
-    <Button className={styles.ac} handleClick={handleClick}>
+    <Button className={styles.ac} handleClick={resetCalculator}>
       AC
     </Button>
   );

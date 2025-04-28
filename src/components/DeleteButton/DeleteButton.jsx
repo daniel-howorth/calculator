@@ -6,9 +6,14 @@ import styles from "./DeleteButton.module.css";
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function DeleteButton() {
-  const { numberInput, setNumberInput } = React.use(CalculatorContext);
+  const { numberInput, setNumberInput, isError, setIsError } =
+    React.use(CalculatorContext);
 
   function handleClick() {
+    if (isError) {
+      setIsError(false);
+    }
+
     if (numberInput.length === 0) {
       return;
     }
