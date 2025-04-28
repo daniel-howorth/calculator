@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../Button";
 
+import styles from "./ClearButton.module.css";
+
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function ClearButton() {
@@ -12,7 +14,7 @@ function ClearButton() {
   }
 
   return (
-    <Button type="AC" handleClick={handleClick}>
+    <Button className={styles.ac} handleClick={handleClick}>
       AC
     </Button>
   );

@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../Button";
 
+import styles from "./OperatorButton.module.css";
+
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function OperatorButton({ type }) {
@@ -13,6 +15,8 @@ function OperatorButton({ type }) {
   } = React.use(CalculatorContext);
 
   const operator = operators[type];
+  console.log(type);
+  console.log(operator);
 
   function handleClick() {
     let numberIsEntered = numberInput.length > 0;
@@ -42,7 +46,7 @@ function OperatorButton({ type }) {
   }
 
   return (
-    <Button type={type} handleClick={handleClick}>
+    <Button className={styles[type]} handleClick={handleClick}>
       {operator}
     </Button>
   );

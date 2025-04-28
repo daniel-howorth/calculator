@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../Button";
 
+import styles from "./DeleteButton.module.css";
+
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function DeleteButton() {
@@ -15,7 +17,7 @@ function DeleteButton() {
   }
 
   return (
-    <Button type="DEL" handleClick={handleClick}>
+    <Button className={styles.delete} handleClick={handleClick}>
       DEL
     </Button>
   );

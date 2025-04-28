@@ -4,12 +4,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
-    "SCREEN SCREEN SCREEN SCREEN"
-    "AC AC DEL DIVIDE"
-    "ONE TWO THREE MULTIPLY"
-    "FOUR FIVE SIX ADD"
-    "SEVEN EIGHT NINE SUBTRACT"
-    "DECIMAL ZERO EQUALS EQUALS";
+    "screen screen screen screen"
+    "ac ac del divide"
+    "one two three multiply"
+    "four five six add"
+    "seven eight nine subtract"
+    "decimal zero equals equals";
   gap: 2px;
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
 }

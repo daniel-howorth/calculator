@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import styles from "./NumberButton.module.css";
 
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
@@ -14,7 +15,7 @@ function NumberButton({ value }) {
   }
 
   return (
-    <Button type={value} handleClick={handleClick}>
+    <Button className={styles[value]} handleClick={handleClick}>
       {digit}
     </Button>
   );

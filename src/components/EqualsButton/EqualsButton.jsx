@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../Button";
 
+import styles from "./EqualsButton.module.css";
+
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function EqualsButton() {
@@ -16,7 +18,7 @@ function EqualsButton() {
   }
 
   return (
-    <Button type="EQUALS" handleClick={handleClick}>
+    <Button className={styles.equals} handleClick={handleClick}>
       =
     </Button>
   );

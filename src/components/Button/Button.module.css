@@ -9,7 +9,7 @@ button:hover {
   cursor: pointer;
 }
 
-.button.ONE {
+/* .button.ONE {
   grid-area: ONE;
 }
 
@@ -47,13 +47,13 @@ button:hover {
 
 .button.ZERO {
   grid-area: ZERO;
-}
+} */
 
-.button.DECIMAL {
+/* .button.DECIMAL {
   grid-area: DECIMAL;
-}
+} */
 
-.button.ADDITION {
+/* .button.ADDITION {
   grid-area: ADDITION;
 }
 
@@ -67,16 +67,16 @@ button:hover {
 
 .button.DIVIDE {
   grid-area: DIVIDE;
-}
+} */
 
-.button.EQUALS {
+/* .button.EQUALS {
   grid-area: EQUALS;
-}
+} */
 
-.AC {
+/* .AC {
   grid-area: AC;
-}
+} */
 
-.button.DEL {
+/* .button.DEL {
   grid-area: DEL;
-}
+} */

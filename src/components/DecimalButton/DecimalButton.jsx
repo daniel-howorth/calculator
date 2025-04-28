@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../Button";
 
+import styles from "./DecimalButton.module.css";
+
 import { CalculatorContext } from "../../contexts/CalculatorProvider";
 
 function DecimalButton() {
@@ -12,7 +14,7 @@ function DecimalButton() {
   }
 
   return (
-    <Button type="DECIMAL" handleClick={handleClick}>
+    <Button className={styles.decimal} handleClick={handleClick}>
       .
     </Button>
   );

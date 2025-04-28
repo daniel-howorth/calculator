@@ -1,7 +1,7 @@
 .screen {
   background-color: #00302c;
   height: calc(100 / 16 * 1rem);
-  grid-area: SCREEN;
+  grid-area: screen;
   display: flex;
   flex-direction: column;
   justify-content: end;
