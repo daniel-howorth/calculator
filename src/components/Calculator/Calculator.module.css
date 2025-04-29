@@ -1,8 +1,8 @@
 .calculator {
-  min-width: 350px;
+  width: min(350px, 100%);
   background-color: white;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-areas:
     "screen screen screen screen"
     "ac ac del divide"
@@ -12,4 +12,28 @@
     "decimal zero equals equals";
   gap: 2px;
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "screen screen"
+      "ac del"
+      "one two"
+      "three four"
+      "five six"
+      "seven eight"
+      "nine zero"
+      "decimal add"
+      "subtract multiply"
+      "divide equals";
+  }
+}
+
+.screenWrapper {
+  grid-area: screen;
+  max-width: 100%;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }

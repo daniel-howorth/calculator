@@ -14,12 +14,22 @@ function Calculator() {
   const { numberInput, calculation, numbers, operators } =
     React.use(CalculatorContext);
 
+  const screenWrapperRef = React.useRef();
+
+  React.useEffect(() => {
+    const wrapper = screenWrapperRef.current;
+    wrapper.scrollLeft = wrapper.scrollWidth;
+  }, [numberInput]);
+
   const numberKeys = Object.keys(numbers);
   const operatorKeys = Object.keys(operators);
 
   return (
     <div className={styles.calculator}>
-      <Screen displayValue={numberInput} entries={calculation} />
+      <div className={styles.screenWrapper} ref={screenWrapperRef}>
+        <Screen displayValue={numberInput} entries={calculation} />
+      </div>
+
       {numberKeys.map((num) => (
         <NumberButton key={num} value={num} />
       ))}
