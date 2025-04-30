@@ -19,7 +19,7 @@ function DecimalButton() {
   }
 
   return (
-    <Button className={styles.decimal} handleClick={handleClick}>
+    <Button className={styles.decimal} handleClick={handleClick} eventKey={"."}>
       .
     </Button>
   );

@@ -9,7 +9,11 @@ function ClearButton() {
   const { resetCalculator } = React.use(CalculatorContext);
 
   return (
-    <Button className={styles.ac} handleClick={resetCalculator}>
+    <Button
+      className={styles.ac}
+      handleClick={resetCalculator}
+      eventKey={["c", "C"]}
+    >
       AC
     </Button>
   );

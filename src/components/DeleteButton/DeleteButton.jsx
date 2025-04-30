@@ -22,7 +22,11 @@ function DeleteButton() {
   }
 
   return (
-    <Button className={styles.delete} handleClick={handleClick}>
+    <Button
+      className={styles.delete}
+      handleClick={handleClick}
+      eventKey={"Backspace"}
+    >
       DEL
     </Button>
   );

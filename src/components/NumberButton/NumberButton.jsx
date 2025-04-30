@@ -20,7 +20,11 @@ function NumberButton({ value }) {
   }
 
   return (
-    <Button className={styles[value]} handleClick={handleClick}>
+    <Button
+      className={styles[value]}
+      handleClick={handleClick}
+      eventKey={digit}
+    >
       {digit}
     </Button>
   );

@@ -44,7 +44,11 @@ function OperatorButton({ type }) {
   }
 
   return (
-    <Button className={styles[type]} handleClick={handleClick}>
+    <Button
+      className={styles[type]}
+      handleClick={handleClick}
+      eventKey={operator}
+    >
       {operator}
     </Button>
   );

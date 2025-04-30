@@ -33,7 +33,11 @@ function EqualsButton() {
   }
 
   return (
-    <Button className={styles.equals} handleClick={handleClick}>
+    <Button
+      className={styles.equals}
+      handleClick={handleClick}
+      eventKey={["Enter", "=", " "]}
+    >
       =
     </Button>
   );
