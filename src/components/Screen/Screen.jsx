@@ -13,7 +13,7 @@ function Screen({ displayValue, entries }) {
   }
 
   return (
-    <div className={styles.screen}>
+    <div className={styles.screen} aria-live="polite" aria-atomic="true">
       <span className={styles.entries}>{entriesStr}</span>
       <span className={styles.display}>{displayValue}</span>
     </div>

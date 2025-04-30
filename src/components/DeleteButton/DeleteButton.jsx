@@ -26,6 +26,7 @@ function DeleteButton() {
       className={styles.delete}
       handleClick={handleClick}
       eventKey={"Backspace"}
+      ariaLabel="delete"
     >
       DEL
     </Button>

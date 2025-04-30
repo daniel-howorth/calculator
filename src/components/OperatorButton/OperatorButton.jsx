@@ -48,6 +48,7 @@ function OperatorButton({ type }) {
       className={styles[type]}
       handleClick={handleClick}
       eventKey={operator}
+      ariaLabel={type}
     >
       {operator}
     </Button>

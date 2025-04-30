@@ -19,7 +19,12 @@ function DecimalButton() {
   }
 
   return (
-    <Button className={styles.decimal} handleClick={handleClick} eventKey={"."}>
+    <Button
+      className={styles.decimal}
+      handleClick={handleClick}
+      eventKey={"."}
+      ariaLabel="decimal"
+    >
       .
     </Button>
   );

@@ -13,6 +13,7 @@ function ClearButton() {
       className={styles.ac}
       handleClick={resetCalculator}
       eventKey={["c", "C"]}
+      ariaLabel="clear"
     >
       AC
     </Button>

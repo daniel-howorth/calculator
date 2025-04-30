@@ -25,7 +25,11 @@ function Calculator() {
   const operatorKeys = Object.keys(operators);
 
   return (
-    <div className={styles.calculator}>
+    <section
+      className={styles.calculator}
+      role="application"
+      aria-label="Calculator"
+    >
       <div className={styles.screenWrapper} ref={screenWrapperRef}>
         <Screen displayValue={numberInput} entries={calculation} />
       </div>
@@ -40,7 +44,7 @@ function Calculator() {
       <EqualsButton />
       <ClearButton />
       <DeleteButton />
-    </div>
+    </section>
   );
 }
 
