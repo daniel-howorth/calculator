@@ -40,13 +40,13 @@ A modern, fully responsive and accessible calculator app built with **React**. T
 
 ## 🧠 Concepts Demonstrated
 
-| Concept                  | Description                                                          |
-| ------------------------ | -------------------------------------------------------------------- |
-| `useContext`             | Shared calculator logic and UI state                                 |
-| `useEffect`              | Event listener management and DOM updates                            |
-| Custom Hook (`useKey`)   | Adds key-based behavior to buttons and components                    |
-| Component Composition    | Reusable `Button` logic across number, operator, and utility buttons |
-| Accessibility Attributes | aria attributes, semantic roles, keyboard support                    |
-| Responsive Grid Layout   | CSS Grid with fluid design                                           |
+| Concept                | Description                                                          |
+| ---------------------- | -------------------------------------------------------------------- |
+| `useContext`           | Shared calculator logic and UI state                                 |
+| `useEffect`            | Event listener management and DOM updates                            |
+| Custom Hook (`useKey`) | Adds key-based behavior to buttons and components                    |
+| Component Composition  | Reusable `Button` logic across number, operator, and utility buttons |
+| Accessibility          | aria attributes, semantic roles, keyboard support                    |
+| Responsive Layout      | CSS Grid with fluid design                                           |
 
 ---
