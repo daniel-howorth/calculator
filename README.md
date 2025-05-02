@@ -1,12 +1,52 @@
-# React + Vite
+# React Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive and accessible calculator app built with **React**. This project showcases advanced React concepts like **custom hooks**, **component composition**, and **keyboard accessibility**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Advanced React Techniques**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  - Context API for global state management
+  - Custom hooks for keyboard input handling
+  - Component composition for clean, reusable code
+
+- **Accessibility**
+
+  - Keyboard input
+  - Screen reader friendly
+
+- 📱 **Responsive Design**
+
+  - Fluid layout using modern CSS Grid techniques
+  - Adjusts dynamically based on screen size
+
+---
+
+## Demo
+
+![Calculator Demo](./src/assets/demo.gif)
+
+---
+
+## Tech Stack
+
+- React
+- CSS Modules
+- HTML5
+
+---
+
+## 🧠 Concepts Demonstrated
+
+| Concept                  | Description                                                          |
+| ------------------------ | -------------------------------------------------------------------- |
+| `useContext`             | Shared calculator logic and UI state                                 |
+| `useEffect`              | Event listener management and DOM updates                            |
+| Custom Hook (`useKey`)   | Adds key-based behavior to buttons and components                    |
+| Component Composition    | Reusable `Button` logic across number, operator, and utility buttons |
+| Accessibility Attributes | aria attributes, semantic roles, keyboard support                    |
+| Responsive Grid Layout   | CSS Grid with fluid design                                           |
+
+---
